@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
-import { RouterModule, Routes} from '@angular/router';
-const routes : Routes = [
-  {path:'about-us', component: AboutUsComponent},
-  {path:'how-it-works', component: HowItWorksComponent}
-]
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+import { UsersModule } from './users/users.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,10 +18,9 @@ const routes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
+    AppRoutingModule,
+    AuthModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
