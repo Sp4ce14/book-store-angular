@@ -6,8 +6,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
-import { AuthRoutingModule } from './auth/auth-routing.module';
 import { UsersModule } from './users/users.module';
+import { PublicModule } from './public/public.module';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { UsersModule } from './users/users.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
