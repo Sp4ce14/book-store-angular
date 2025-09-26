@@ -5,9 +5,8 @@ import { AppComponent } from './app.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
-import { PublicModule } from './public/public.module';
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,10 +17,9 @@ import { PublicModule } from './public/public.module';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
-    AuthModule,
-    UsersModule,
-    PublicModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
