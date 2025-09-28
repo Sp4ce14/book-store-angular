@@ -1,19 +1,8 @@
-
+<div class="app-container"> 
 <app-toolbar></app-toolbar>
-<a [routerLink]="['/auth/login']" [queryParams]="{email: email, name: name}">Login</a>
-<br>
-<a [routerLink]="['/auth/signup']">Sign up</a>
-<br>
-<a [routerLink]="['/users',UserId,'add-book']">Add book</a>
-<br>
-<a [routerLink]="['/users',UserId,'delete-book']">Delete book</a>
-<br>
-<a [routerLink]="['/public']">books</a>
-<br>
-<p>
-  header
-</p>
-<router-outlet></router-outlet>
-<p>
-  footer
-</p>
+<main class="app-content">
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>
+</div>
+

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PublicComponent } from './public.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AllBooksComponent } from './components/all-books/all-books.component';
 
@@ -18,4 +17,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class PublicRoutingModule { }
+export class BooksRoutingModule { }
