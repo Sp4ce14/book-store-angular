@@ -3,12 +3,12 @@
 <mat-toolbar color="primary">
   <span>BookStore</span>
   <span class="spacer"></span>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <button mat-button >All Books</button>
+  <button mat-button routerLink="books/all-books">All Books</button>
   <span class="spacer"></span>
-  <button mat-button>Login</button>
-  <button mat-button>Sign up</button>
+  <button mat-button routerLink="auth/login">Login</button>
+  <button mat-button routerLink="auth/signup">Sign up</button>
 </mat-toolbar>
 
