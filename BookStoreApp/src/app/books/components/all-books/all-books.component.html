@@ -1,1 +1,28 @@
-<p>all-books works!</p>
+<div class="flex">
+<mat-card class="example-card" appearance="outlined" *ngFor="let book of books">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>FAIZI</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      Title: {{book.title}}
+    </p>
+    <p>
+      Author: {{book.author}}
+    </p>
+    <p>
+      Pages: {{book.totalPages}}
+    </p>
+    <p>
+      Price: {{book.price.value}} {{book.price.currency}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>Details</button>
+    <button matButton>Share</button>
+  </mat-card-actions>
+</mat-card>
+</div>
