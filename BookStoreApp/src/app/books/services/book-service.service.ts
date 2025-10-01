@@ -61,5 +61,29 @@ export class BookService {
       }
     ]
   }
+  public getRecentBooks(): any {
+    return [
+      {
+        id: 1,
+        title: "The Pragmatic Programmer",
+        totalPages: 352,
+        author: "Andrew Hunt, David Thomas",
+        price: {
+          currency: "USD",
+          value: 45.99
+        }
+      },
+      {
+        id: 2,
+        title: "Clean Code",
+        totalPages: 464,
+        author: "Robert C. Martin",
+        price: {
+          currency: "USD",
+          value: 39.99
+        }
+      }
+    ]
+  }
 }
 
