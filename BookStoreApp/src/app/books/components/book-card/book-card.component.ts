@@ -10,9 +10,9 @@ export class BookCardComponent implements OnInit {
 
   constructor() { }
   private _books: BookModel[];
+
   @Input('bookData')
   set books(value: BookModel[] ){
-    value.map(m => m.title = 'Title: ' + m.title)
     this._books = value; 
   }
   get books(){

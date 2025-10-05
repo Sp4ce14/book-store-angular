@@ -21,17 +21,8 @@ export class AllBooksComponent implements OnInit {
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {
-    this.pageTitle = 'All Books'
-    const allBooks: BookModel[] = this.bookService.getBooks();
-    allBooks.forEach((b: BookModel) => {
-      var obj = new BookModel();
-      obj.id = b.id,
-        obj.totalPages = b.totalPages,
-        obj.title = b.title,
-        obj.price = b.price,
-        obj.author = b.author
-      this.books.push(obj);
-    })
+    this.books = this.bookService.getBooks();
+    }
   }
 
-}
+

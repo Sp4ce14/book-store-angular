@@ -1,3 +1,2 @@
 <p>home works!</p>
-<button (click)="author.setData('4')">SET DATA</button>
-<app-authors [data]="digit" [showAuthors]="true" #author></app-authors>
+<app-authors (data)="childData($event)"></app-authors>

@@ -1,0 +1,46 @@
+<form class="container" [formGroup]="addFormGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" name="title" placeholder="Title" formControlName="title">
+        <mat-hint >Please Enter the title</mat-hint>
+        <mat-icon matSuffix>title</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput type="text" name="author" placeholder="Author" required formControlName="author">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Pages</mat-label>
+        <input matInput type="number" name="pages" placeholder="No. of pages" required formControlName="totalPages">
+        <mat-icon matSuffix>article</mat-icon>
+    </mat-form-field>
+    <div class="price-container" formGroupName="price">
+        <mat-form-field appearance="fill">
+            <mat-form-field class="select">
+                <mat-label>Currency</mat-label>
+                <mat-select name="currency" required formControlName="currency">
+                    <mat-option *ngFor="let currency of currencies" [value]="currency.value">$ {{currency.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-icon matSuffix>paid</mat-icon>
+        </mat-form-field><mat-form-field appearance="fill">
+            <mat-form-field class="select">
+                <mat-label>Price</mat-label>
+                <mat-select name="price" required formControlName="value">
+                    <mat-option *ngFor="let price of prices" [value]="price.value">$ {{price.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-icon matSuffix>paid</mat-icon>
+        </mat-form-field>
+    </div>
+    <mat-form-field *ngIf="showDate">
+        <mat-label>Published On</mat-label>
+        <input matInput [matDatepicker]="picker" name="publishedOn" required formControlName="publishedOn">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-slide-toggle #toggle (click)="toggleDate(toggle)" name="published"
+        formControlName="isPublished">Published?</mat-slide-toggle>
+    <button mat-raised-button color="primary" [disabled]="addFormGroup.invalid" class="btn" (click)="saveBook()">Save</button>
+</form>

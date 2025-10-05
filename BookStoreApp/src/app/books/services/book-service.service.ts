@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BookModel } from '../models/book.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-
-  constructor() { }
-  public getBooks(): any {
-    return [
+  public allBooks: any = [
       {
         id: 1,
         title: "The Pragmatic Programmer",
@@ -60,6 +58,14 @@ export class BookService {
         }
       }
     ]
+  
+
+  constructor() { }
+  public addBook(book: BookModel): void {
+    this.allBooks.push(book);
+  }
+  public getBooks(): any {
+    return this.allBooks;
   }
   public getRecentBooks(): any {
     return [

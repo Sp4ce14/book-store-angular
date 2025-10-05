@@ -1,10 +1,12 @@
-<a routerLink="/books/recent-books">RECENT BOOKS</a>
+<button class="btn" routerLink="/users/add-book" mat-raised-button color="primary">Add Book</button>
+<button class="btn" routerLink="/users/add-book-reactive" mat-raised-button color="primary">Add Book Reactive</button>
+<button class="btn" routerLink="/books/recent-books" mat-raised-button color="primary">Recent Books</button>
 <div class="container">
   <!-- -->
 <mat-card class="book-card" appearance="" *ngFor="let book of books">
   <mat-card-header>
     <div mat-card-avatar class="book-header-image"></div>
-    <mat-card-title>{{book.title}}</mat-card-title>
+    <mat-card-title>Title: {{book.title}}</mat-card-title>
     <mat-card-subtitle>Book</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
@@ -17,6 +19,12 @@
     </p>
     <p>
       Price: {{book.price.value}} {{book.price.currency}}
+    </p>
+    <p>
+      Is Published: {{book.isPublished}}
+    </p>
+    <p>
+      Published On: {{book.publishedOn}}
     </p>
   </mat-card-content>
   <mat-card-actions>

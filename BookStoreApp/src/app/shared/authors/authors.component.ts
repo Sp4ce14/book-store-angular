@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-authors',
@@ -6,13 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent implements OnInit {
-  @Input() data: string | undefined;
-  @Input() showAuthors: boolean = false;
-  constructor() { }
 
+  constructor() { }
+  @Output() data = new EventEmitter<string>();
   ngOnInit(): void {
   }
-  public setData(value: string): void{
-    this.data = value;
+  public btn(): void{
+    this.data.emit('hello from child aka author');
   }
 }

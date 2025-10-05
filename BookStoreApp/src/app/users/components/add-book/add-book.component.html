@@ -1,1 +1,35 @@
-<p>add-book works!</p>
+<form #form="ngForm" (ngSubmit)="addABook()" class="container">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" name="title" placeholder="Title" [(ngModel)]="model.title" required #title="ngModel">
+        <mat-hint *ngIf="title.touched && title.invalid">Please Enter the title</mat-hint>
+        <mat-icon matSuffix>title</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput type="text" name="author" placeholder="Author" [(ngModel)]="model.author" required>
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Pages</mat-label>
+        <input matInput type="text" name="pages" placeholder="No. of pages" [(ngModel)]="model.totalPages" required>
+        <mat-icon matSuffix>article</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-form-field class="select">
+            <mat-label>Price</mat-label>
+            <mat-select [(ngModel)]="model.price.value" name="price" required>
+                <mat-option *ngFor="let price of prices" [value]="price.value">$ {{price.value}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-icon matSuffix>paid</mat-icon>
+    </mat-form-field>
+    <mat-form-field *ngIf="showDate">
+        <mat-label>Published On</mat-label>
+        <input matInput [matDatepicker]="picker" name="publishedOn" [(ngModel)]="model.publishedOn" required>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-slide-toggle [(ngModel)]="model.isPublished" #toggle (click)="toggleDate(toggle)" name="published">Published?</mat-slide-toggle>
+    <button mat-raised-button color="primary" class="btn" [disabled]="form.invalid">Save</button>
+</form>
